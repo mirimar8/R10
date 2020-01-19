@@ -6,14 +6,14 @@ import {
 } from 'react-native';
 // import styles from './styles';
 
-const Schedule = () => {
+const Map = () => {
     return (
         <ScrollView>
             <View >
-                <Text>Schedule screen</Text>
+                <Text>Map screen</Text>
             </View>
         </ScrollView >
     );
 };
 
-export default Schedule;
+export default Map;

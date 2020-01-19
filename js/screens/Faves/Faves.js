@@ -6,14 +6,14 @@ import {
 } from 'react-native';
 // import styles from './styles';
 
-const Schedule = () => {
+const Faves = () => {
     return (
         <ScrollView>
             <View >
-                <Text>Schedule screen</Text>
+                <Text>Faves screen</Text>
             </View>
         </ScrollView >
     );
 };
 
-export default Schedule;
+export default Faves;
