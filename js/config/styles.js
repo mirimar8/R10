@@ -1,13 +1,30 @@
-// const styles = () => {
-//     colors: {
-//         MediumGrey: #999999
-//         Light Grey: #e6e6e6
-//         Blue: #8797D6
-//         Purple: #9963ea
-//         Red: #cf392a
-//     }
+import React from 'react';
+import { StyleSheet } from 'react-native';
 
-// }
+const configStyles = StyleSheet.create({
 
-// export default styles;
+    mediumGrey: {
+        color: '#999999',
+    },
+    lightGrey: {
+        color: '#e6e6e6',
+    },
+    blue: {
+        color: '#8797D6',
+    },
+    purple: {
+        color: '#9963ea',
+    },
+    red: {
+        color: '#cf392a',
+    },
+    mainFont: {
+        fontFamily: 'Montserrat',
+    },
+
+});
+
+export default configStyles;
+
+
 

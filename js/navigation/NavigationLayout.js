@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createBottomTabNavigator, tabBarOptions } from 'react-navigation-tabs';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 import About from '../screens/About';
 import Faves from '../screens/Faves/Faves';
 import Map from '../screens/Map/Map';
@@ -30,8 +30,6 @@ export default createBottomTabNavigator(
         Map: MapStack,
         Faves: FavesStack,
         About: AboutStack,
-
-
     },
     {
         tabBarOptions: {
@@ -45,6 +43,10 @@ export default createBottomTabNavigator(
             },
         }
     },
+    {
+        initialRouteName: 'About',
+    },
+
 
 
 );

@@ -1,22 +1,22 @@
-// import React from 'react';
-// // import styles from './styles';
-// import { FlatList, Text, View } from 'react-native';
-
-// const Conduct = ({ conduct }) => {
-//     return (
-//         <View >
-
-//             {data.conduct.map(d => (
-//                 <FlatList
-//                     key={d.id}
-//                     renderItem={({ listItem }) => <Text>{listItem.key}</Text>} >
-
-//                 </FlatList>
-//             ))}
+import React from 'react';
+import { Text, View, FlatList } from 'react-native';
+import styles from './styles';
 
 
-//         </View>
-//     );
-// }
+const Conduct = ({ conduct, data }) => {
+    return (
+        <View >
+            <FlatList
+                data={data.allConducts}
+                renderItem={({ item }) => (
+                    <View>
+                        <Text style={styles.titleConduct}>{item.title}</Text>
+                        <Text style={styles.descConduct}>{item.description}</Text>
+                    </View>)}
+            />
 
-// export default Conduct;
+        </View>
+    );
+}
+
+export default Conduct;

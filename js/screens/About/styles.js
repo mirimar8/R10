@@ -2,10 +2,12 @@ import React from 'react';
 import {
     StyleSheet,
 } from 'react-native';
+import style from '../../config/styles';
 
-import {
-    Colors,
-} from 'react-native/Libraries/NewAppScreen';
+
+// import {
+//     Colors,
+// } from 'react-native/Libraries/NewAppScreen';
 
 const styles = StyleSheet.create({
 
@@ -13,18 +15,30 @@ const styles = StyleSheet.create({
     sectionContainer: {
         marginTop: 32,
         paddingHorizontal: 24,
+        fontFamily: style.mainFont.fontFamily,
     },
     sectionTitle: {
-        fontSize: 24,
+        marginTop: 28,
+        fontSize: 28,
         fontWeight: '600',
-        color: Colors.black,
+        color: 'black',
+
     },
     sectionDescription: {
-        marginTop: 8,
-        fontSize: 18,
+        marginTop: 25,
+        fontSize: 20,
         fontWeight: '400',
-        color: Colors.dark,
+        color: 'black',
     },
+    R10image: {
+
+
+    },
+    imageContainer: {
+        display: 'flex',
+        alignItems: 'center',
+        marginTop: 30,
+    }
 
 });
 

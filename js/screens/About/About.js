@@ -3,14 +3,23 @@ import {
     ScrollView,
     View,
     Text,
-    FlatList,
-} from 'react-native';
-// import Conduct from '../../components/Conduct';
-import styles from './styles';
+    Image,
 
-const About = ({ title1, title2, description1, description2, data }) => {
+} from 'react-native';
+import styles from './styles';
+import Conduct from '../../components/Conduct';
+
+const About = ({ title1, title2, description1, description2, data, conduct }) => {
     return (
         <ScrollView>
+            <View style={styles.imageContainer}>
+                <Image
+                    style={styles.R10image}
+                    source={require('../../assets/images/r10_logo.png')}
+                />
+            </View>
+
+
             <View style={styles.sectionContainer}>
 
                 <Text style={styles.sectionDescription}>{description1}</Text>
@@ -18,34 +27,10 @@ const About = ({ title1, title2, description1, description2, data }) => {
                 <Text style={styles.sectionDescription}>{description2}</Text>
                 <Text style={styles.sectionTitle}>{title2}</Text>
             </View>
-            <View style={styles.listContainer}>
-                {data.allConducts.map(conduct => (
-                    <FlatList
-                        key={conduct.id}
-                        renderItem={({ listItem }) => <Text>{listItem.key}</Text>}
-                        data={conduct}
-                    />
-                ))
-                }
-            </View>
 
-            {/* <View style={styles.container}>
-                <FlatList
-                    data={[
-                        { key: 'Devin' },
-                        { key: 'Dan' },
-                        { key: 'Dominic' },
-                        { key: 'Jackson' },
-                        { key: 'James' },
-                        { key: 'Joel' },
-                        { key: 'John' },
-                        { key: 'Jillian' },
-                        { key: 'Jimmy' },
-                        { key: 'Julie' },
-                    ]}
-                    renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
-                />
-            </View> */}
+            <View style={styles.container}>
+                <Conduct data={data} />
+            </View>
         </ScrollView >
 
     );
