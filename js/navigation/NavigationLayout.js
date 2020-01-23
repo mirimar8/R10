@@ -2,9 +2,9 @@ import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import About from '../screens/About';
-import Faves from '../screens/Faves/Faves';
+import Faves from '../screens/Faves';
 import Map from '../screens/Map/Map';
-import Schedule from '../screens/Schedule/Schedule';
+import Schedule from '../screens/Schedule';
 
 
 const AboutStack = createStackNavigator({

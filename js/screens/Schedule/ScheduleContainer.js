@@ -10,7 +10,6 @@ const ALL_SESSIONS_QUERY = gql`
         id
         description
         location
-        speaker
         startTime
         title
       }
@@ -18,7 +17,6 @@ const ALL_SESSIONS_QUERY = gql`
 `
 
 const ScheduleContainer = () => {
-    console.log(hii);
     return (
         // <Text>HELLO</Text>
         <Query query={ALL_SESSIONS_QUERY}>

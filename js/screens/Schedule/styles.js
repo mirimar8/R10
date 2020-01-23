@@ -12,18 +12,24 @@ import style from '../../config/styles';
 const styles = StyleSheet.create({
 
 
-    // container: {
-    //     marginTop: 32,
-    //     paddingHorizontal: 24,
-    //     fontFamily: style.mainFont.fontFamily,
-    // },
-    // titleSession: {
-    //     marginTop: 20,
-    //     paddingHorizontal: 24,
-    //     color: style.purple.color,
-    //     fontWeight: '600',
-    //     fontSize: 20,
-    // },
+    container: {
+        fontFamily: style.mainFont.fontFamily,
+    },
+    titleSession: {
+        marginTop: 20,
+        paddingHorizontal: 24,
+        color: 'black',
+        fontWeight: '600',
+        fontSize: 20,
+        // fontFamily: style.mainFont.fontFamily,
+    },
+    locationSession: {
+        marginTop: 20,
+        paddingHorizontal: 24,
+        color: 'black',
+        fontWeight: '400',
+        fontSize: 20,
+    }
 
 
 });

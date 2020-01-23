@@ -13,14 +13,14 @@ const Schedule = ({ data }) => {
         <ScrollView>
             <View style={styles.container}>
                 {/* <Text data={data}></Text> */}
-                {/* <FlatList
+                <FlatList
                     data={data.allSessions}
                     renderItem={({ item }) => (
-                        <View>
+                        <View style={styles.container}>
                             <Text style={styles.titleSession}>{item.title}</Text>
-
+                            <Text style={styles.locationSession}>{item.location}</Text>
                         </View>)}
-                /> */}
+                />
             </View>
         </ScrollView >
     );
