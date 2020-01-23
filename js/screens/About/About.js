@@ -7,7 +7,7 @@ import {
 
 } from 'react-native';
 import styles from './styles';
-import Conduct from '../../components/Conduct';
+import Conduct from '../../components/Conduct/Conduct';
 
 const About = ({ title1, title2, description1, description2, data, conduct }) => {
     return (

@@ -5,6 +5,7 @@ import AboutContainer from './screens/About';
 import { ApolloProvider } from '@apollo/react-hooks';
 import RootStackNavigator from './navigation/RootStackNavigator';
 import { Text, View } from 'react-native';
+import model from './config/model'
 
 const App = () => {
   return (

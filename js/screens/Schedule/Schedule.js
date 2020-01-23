@@ -3,14 +3,24 @@ import {
     ScrollView,
     View,
     Text,
+    FlatList
 } from 'react-native';
-// import styles from './styles';
+// import { FlatList } from 'react-native-gesture-handler';
+import styles from './styles';
 
-const Schedule = () => {
+const Schedule = ({ data }) => {
     return (
         <ScrollView>
-            <View >
-                <Text>Schedule screen</Text>
+            <View style={styles.container}>
+                {/* <Text data={data}></Text> */}
+                {/* <FlatList
+                    data={data.allSessions}
+                    renderItem={({ item }) => (
+                        <View>
+                            <Text style={styles.titleSession}>{item.title}</Text>
+
+                        </View>)}
+                /> */}
             </View>
         </ScrollView >
     );

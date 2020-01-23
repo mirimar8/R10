@@ -18,7 +18,7 @@ const AboutContainer = () => {
     return (
         <Query query={ALL_CONDUCTS_QUERY}>
             {({ loading, error, data }) => {
-                console.log(loading, error, data);
+                // console.log(loading, error, data);
                 if (loading) return <Text>Loading...</Text>;
                 if (error) return <Text>Error :(</Text>;
 

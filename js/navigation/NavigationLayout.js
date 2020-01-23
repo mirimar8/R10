@@ -41,12 +41,9 @@ export default createBottomTabNavigator(
             style: {
                 backgroundColor: 'black',
             },
-        }
+        },
+        // initialRouteName: 'About'
     },
-    {
-        initialRouteName: 'About',
-    },
-
 
 
 );
