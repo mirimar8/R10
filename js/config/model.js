@@ -4,30 +4,29 @@ import AsyncStorage from '@react-native-community/async-storage';
 let faveIds = [2, 4, 5, 6];
 
 
-const addFave = async () => {
+const addFave = async (faveIds) => {
     try {
-        console.log('This function has run.')
-        await AsyncStorage.setItem('faveIds', JSON.stringify(faveIds));
+        await AsyncStorage.setItem(faveIds, JSON.stringify(faveIds));
     } catch (error) {
-        console.log(error)
+        throw (error)
     }
 }
 
 const getFave = async () => {
     try {
-        let faveIds = await AsyncStorage.getItem('faveIds');
-        console.log(JSON.parse(faveIds));
+        let faveIds = await AsyncStorage.getItem(faveIds);
+        // console.log(JSON.parse(faveIds));
         return JSON.parse(faveIds);
     } catch (error) {
-        console.log(error)
+        throw (error)
     }
 }
 
 const removeFave = async () => {
     try {
-        await AsyncStorage.removeItem('faveIds');
+        await AsyncStorage.removeItem(faveIds);
     } catch (error) {
-        console.log(error)
+        throw (error)
     }
 }
 
@@ -35,9 +34,9 @@ const queringAllFaves = async () => {
     try {
         const keys = await AsyncStorage.getAllKeys();
         const values = await AsyncStorage.multiGet(keys);
-        console.log(values);
+        return values;
     } catch (error) {
-        console.log(error)
+        throw (error)
     }
 }
 

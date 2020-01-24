@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-export const FavesContext = React.createContext();
+import queringAllFaves from '../config/model'
+import { FlatList } from "react-native-gesture-handler";
 
+export const FavesContext = React.createContext();
 class FavesProvider extends Component {
     constructor(props) {
         super(props);
@@ -9,9 +11,13 @@ class FavesProvider extends Component {
         };
     }
 
-    getFavedSessionIds = async () => {
-
-
+    componentDidMount() {
+        getFavedSessionIds = async () => {
+            const results = (await queringAllFaves()).map(fave => fave[0]);
+            this.setState({
+                faveIds: results
+            })
+        }
     }
 
     render() {
