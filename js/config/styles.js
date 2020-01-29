@@ -18,8 +18,11 @@ const configStyles = StyleSheet.create({
     red: {
         color: '#cf392a',
     },
-    mainFont: {
-        fontFamily: 'Montserrat',
+    mainFontLight: {
+        fontFamily: 'Montserrat-Light',
+    },
+    mainFontRegular: {
+        fontFamily: 'Montserrat-Regular',
     },
 
 });

@@ -3,14 +3,15 @@ import {
     ScrollView,
     View,
     Text,
+    FlatList
 } from 'react-native';
-// import styles from './styles';
+import styles from './styles';
 
-const Faves = () => {
+const Faves = ({ data, favesId }) => {
     return (
         <ScrollView>
             <View >
-                <Text>Faves screen</Text>
+                <SessionList data={data} />
             </View>
         </ScrollView >
     );

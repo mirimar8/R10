@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import queringAllFaves from '../config/model'
-import { FlatList } from "react-native-gesture-handler";
+import queringAllFaves from '../../config/model';
+import addFave from '../../config/model';
+import removeFave from '../../config/model';
 
-export const FavesContext = React.createContext();
+
+const FavesContext = React.createContext();
 class FavesProvider extends Component {
     constructor(props) {
         super(props);
@@ -13,20 +15,44 @@ class FavesProvider extends Component {
 
     componentDidMount() {
         getFavedSessionIds = async () => {
-            const results = (await queringAllFaves()).map(fave => fave[0]);
+            const queryResults = (await queringAllFaves()).map(fave => fave[0]);
             this.setState({
-                faveIds: results
+                faveIds: queryResults
             })
         }
     }
 
+    addFaveSession = async sessionId => {
+        const addFaveResults = await addFave(sessionId)
+        this.setState({
+            faveIds: addFaveResults
+        })
+        this.getFavedSessionIds();
+
+    }
+
+    removeFaveSession = async sessionId => {
+        await removeFave(sessionId);
+        this.getFavedSessionIds();
+    }
+
+
+
     render() {
         return (
-            <FavesContext.Provider value={{ ...this.state }}>
+            <FavesContext.Provider
+                value={{
+                    addFaveSession: this.addFaveSession,
+                    removeFaveSession: this.removeFaveSession,
+                    faveIds: this.state.faveIds
+                }}>
                 {this.props.children}
             </FavesContext.Provider>
         );
     }
-    // more code will go here!
+
 }
+
+
 export default FavesProvider;
+export { FavesContext };

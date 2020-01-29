@@ -15,7 +15,7 @@ const About = ({ title1, title2, description1, description2, data, conduct }) =>
             <View style={styles.imageContainer}>
                 <Image
                     style={styles.R10image}
-                    source={require('../../assets/images/r10_logo.png')}
+                    source={require('../../../assets/images/r10_logo.png')}
                 />
             </View>
 

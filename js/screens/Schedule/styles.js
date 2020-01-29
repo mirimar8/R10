@@ -2,7 +2,7 @@ import React from 'react';
 import {
     StyleSheet,
 } from 'react-native';
-import style from '../../config/styles';
+// import style from '../../config/styles';
 
 
 // import {
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 
 
     container: {
-        fontFamily: style.mainFont.fontFamily,
+        // fontFamily: style.mainFont.fontFamily,
     },
     titleSession: {
         marginTop: 20,
