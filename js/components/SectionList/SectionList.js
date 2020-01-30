@@ -3,7 +3,7 @@ import { Text, View, FlatList } from 'react-native';
 import styles from './styles';
 
 
-const SessionList = ({ favesId, data }) => {
+const SectionList = ({ favesId, data }) => {
     return (
         <View >
             <FlatList
@@ -19,4 +19,4 @@ const SessionList = ({ favesId, data }) => {
     );
 }
 
-export default SessionList;
+export default SectionList;

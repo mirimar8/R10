@@ -4,6 +4,7 @@ import {
     View,
     Text,
     Image,
+    FlatList
 
 } from 'react-native';
 import styles from './styles';
@@ -29,8 +30,14 @@ const About = ({ title1, title2, description1, description2, data, conduct }) =>
             </View>
 
             <View style={styles.container}>
-                <Conduct data={data} />
+                <FlatList
+                    data={data.allConducts}
+                    renderItem={({ item }) => (
+                        <Conduct item={item} />
+                    )}
+                />
             </View>
+            <Text>{'\u00A9'} RED Academy 2017</Text>
         </ScrollView >
 
     );

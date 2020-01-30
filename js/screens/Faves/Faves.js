@@ -11,7 +11,7 @@ const Faves = ({ data, favesId }) => {
     return (
         <ScrollView>
             <View >
-                <SessionList data={data} />
+                <SectionList data={data} />
             </View>
         </ScrollView >
     );
