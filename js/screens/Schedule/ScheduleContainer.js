@@ -18,7 +18,6 @@ const ALL_SESSIONS_QUERY = gql`
 
 const ScheduleContainer = () => {
     return (
-        // <Text>HELLO</Text>
         <Query query={ALL_SESSIONS_QUERY}>
             {({ loading, error, data }) => {
                 console.log(loading, error, data);

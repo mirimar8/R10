@@ -9,9 +9,10 @@ const SectionList = ({ favesId, data }) => {
             <FlatList
                 data={data.allSessions}
                 renderItem={({ item }) => (
-                    <View>
-                        <Text style={styles.titleConduct}>{item.title}</Text>
-                        <Text style={styles.descConduct}>{item.location}</Text>
+                    <View style={styles.sessionContainer}>
+                        <Text style={styles.time}>{item.startTime}</Text>
+                        <Text style={styles.titleSession}>{item.title}</Text>
+                        <Text style={styles.locationSession}>{item.location}</Text>
                     </View>)}
             />
 

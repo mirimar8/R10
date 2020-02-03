@@ -6,6 +6,8 @@ import {
     FlatList
 } from 'react-native';
 import styles from './styles';
+import SectionList from '../../components/SectionList/SectionList';
+
 
 const Faves = ({ data, favesId }) => {
     return (
