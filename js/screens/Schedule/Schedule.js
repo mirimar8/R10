@@ -7,13 +7,13 @@ import {
 } from 'react-native';
 // import { FlatList } from 'react-native-gesture-handler';
 import styles from './styles';
-import SectionList from '../../components/SectionList/SectionList';
+import SessionList from '../../components/SessionList/SessionList';
 
 const Schedule = ({ data }) => {
     return (
         <ScrollView>
             <View style={styles.container}>
-                <SectionList data={data} />
+                <SessionList data={data} />
                 {/* <FlatList
                     data={data.allSessions}
                     renderItem={({ item }) => (

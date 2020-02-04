@@ -6,14 +6,14 @@ import {
     FlatList
 } from 'react-native';
 import styles from './styles';
-import SectionList from '../../components/SectionList/SectionList';
+import SessionList from '../../components/SessionList/SessionList';
 
 
 const Faves = ({ data, favesId }) => {
     return (
         <ScrollView>
             <View >
-                <SectionList data={data} />
+                <SessionList data={data} />
             </View>
         </ScrollView >
     );
