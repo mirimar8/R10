@@ -9,7 +9,7 @@ import styles from './styles';
 import SessionList from '../../components/SessionList/SessionList';
 
 
-const Faves = ({ data, favesId }) => {
+const Faves = ({ data, faveIds }) => {
     return (
         <ScrollView>
             <View >

@@ -1,40 +1,30 @@
 import React from 'react';
-import { Text, View, FlatList, SectionList } from 'react-native';
+import { Text, View, SectionList, TouchableHighlight } from 'react-native';
 import styles from './styles';
 import { formatSessionData } from '../../helpers';
 import moment from "moment";
+import { withNavigation } from 'react-navigation';
 
 
-
-
-const SessionList = ({ favesId, data }) => {
+const SessionList = ({ faveIds, data, navigation }) => {
     return (
         <View >
             <SectionList
-                sections={formatSessionData(data.allSessions)}
+                sections={formatSessionData(data)}
                 renderItem={({ item }) => (
-                    <View style={styles.sessionContainer}>
-                        <Text style={styles.titleSession}>{item.title}</Text>
-                        <Text style={styles.locationSession}>{item.location}</Text>
-                    </View>)}
+                    <TouchableHighlight onPress={() => navigation.navigate('Session')}>
+                        <View style={styles.sessionContainer}>
+                            <Text style={styles.titleSession}>{item.title}</Text>
+                            <Text style={styles.locationSession}>{item.location}</Text>
+                        </View>
+                    </TouchableHighlight>
+                )}
                 renderSectionHeader={({ section }) =>
                     <Text style={styles.sectionHeader}>{moment(section.title).format('LT')}</Text>}
                 keyExtractor={(item, index) => index}
             />
-
-
-            {/* <FlatList
-                data={data.allSessions}
-                renderItem={({ item }) => (
-                    <View style={styles.sessionContainer}>
-                        <Text style={styles.time}>{item.startTime}</Text>
-                        <Text style={styles.titleSession}>{item.title}</Text>
-                        <Text style={styles.locationSession}>{item.location}</Text>
-                    </View>)}
-            /> */}
-
         </View>
     );
 }
 
-export default SessionList;
+export default withNavigation(SessionList);

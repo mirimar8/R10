@@ -8,14 +8,14 @@ import {
 import styles from './styles';
 import SessionList from '../../components/SessionList/SessionList';
 
-const Schedule = ({ data }) => {
+const Session = ({ data }) => {
     return (
         <ScrollView>
             <View style={styles.container}>
-                <SessionList data={data} />
+                <Text>Session Screen</Text>
             </View>
         </ScrollView >
     );
 };
 
-export default Schedule;
+export default Session;

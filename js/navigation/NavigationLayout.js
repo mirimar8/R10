@@ -5,9 +5,10 @@ import About from '../screens/About';
 import Faves from '../screens/Faves';
 import Map from '../screens/Map/Map';
 import Schedule from '../screens/Schedule';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Session } from '../screens/Session';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { sharedNavigationOptions } from "./config";
-
+import { Text } from 'react-native'
 
 const AboutStack = createStackNavigator(
     {
@@ -45,6 +46,7 @@ const MapStack = createStackNavigator(
 const ScheduleStack = createStackNavigator(
     {
         Schedule: Schedule,
+        Session: Session,
     },
     // {
     //     defaultNavigationOptions: ({ navigation }) => ({
@@ -57,40 +59,56 @@ const ScheduleStack = createStackNavigator(
 export default createBottomTabNavigator(
     {
         Schedule: ScheduleStack,
+        // {
+        //     screen: ScheduleStack,
+        //     navigationOptions: {
+        //         tabBarIcon: ({ tintColor }) => (
+        //             // <Text>⏰</Text>
+        //             <Icon name="ios-calendar" size={25} color="#fff" />
+        //         ),
+        //     },
+        // },
         Map: MapStack,
         Faves: FavesStack,
         About: AboutStack,
     },
     {
-        // defaultNavigationOptions: ({ navigation }) => ({
-        //     tabBarIcon: ({ focused, horizontal, tintColor }) => {
-        //         const { routeName } = navigation.state;
-        //         let IconComponent = Ionicons;
-        //         let iconName;
-        //         if (routeName === 'Schedule') {
-        //             iconName = 'ios-calendar'
-        //         } else if (routeName === 'About') {
-        //             iconName = 'ios-information-circle'
-        //         } else if (routeName === 'Faves') {
-        //             iconName = 'ios-heart-empty'
-        //         } else if (routeName === 'Map') {
-        //             iconName = 'ios-map'
-        //         }
+        defaultNavigationOptions: ({ navigation }) => ({
+            tabBarIcon: ({ focused, horizontal, tintColor }) => {
+                const { routeName } = navigation.state;
+                // let IconComponent = Ionicons;
+                let iconName;
+                if (routeName === 'Schedule') {
+                    iconName = 'ios-calendar'
+                } else if (routeName === 'About') {
+                    iconName = 'ios-information-circle'
+                } else if (routeName === 'Faves') {
+                    iconName = 'ios-heart'
+                } else if (routeName === 'Map') {
+                    iconName = 'ios-map'
+                }
 
-        //         // You can return any component that you like here!
-        //         return <IconComponent name={iconName} size={25} color={tintColor} />;
-        //     },
-        // }),
+                // You can return any component that you like here!
+                return <Icon name={iconName} size={25} color={tintColor} />;
+            },
+        }),
         tabBarOptions: {
             activeTintColor: 'white',
             inactiveTintColor: '#999999',
             labelStyle: {
                 fontSize: 15,
-                fontFamily: 'Montserrat-Light'
+                fontFamily: 'Montserrat-Light',
+                fontWeight: '600',
+
             },
             style: {
                 backgroundColor: 'black',
+                paddingTop: 7,
             },
+            tabStyle: {
+                height: 55,
+            },
+            labelPosition: 'below-icon',
         },
         // initialRouteName: 'About'
     },

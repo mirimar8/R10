@@ -15,7 +15,10 @@ class FavesProvider extends Component {
 
     componentDidMount() {
         getFavedSessionIds = async () => {
+            console.log("getFavedSessionIds");
             const queryResults = (await queringAllFaves()).map(fave => fave[0]);
+            console.log("getting query results");
+            console.log(queryResults);
             this.setState({
                 faveIds: queryResults
             })
@@ -39,6 +42,8 @@ class FavesProvider extends Component {
 
 
     render() {
+        console.log("faves context render")
+        console.log(this.state.faveIds);
         return (
             <FavesContext.Provider
                 value={{

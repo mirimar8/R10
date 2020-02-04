@@ -1,8 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage';
 // import { Component } from 'react';
 
-// let faveIds = [2, 4, 5, 6];
-
 
 addFave = async (faveIds) => {
     try {

@@ -17,25 +17,34 @@ const ALL_SESSIONS_QUERY = gql`
 `
 
 const FavesContainer = () => {
+    console.log("faves contaner");
     return (
         <FavesContext.Consumer>
-            {({ favesId, addFaveSession, removeFaveSession }) => {
-                <Query query={ALL_SESSIONS_QUERY}>
-                    {({ loading, error, data }) => {
-                        console.log(loading, error, data);
-                        if (loading) return <Text>Loading...</Text>;
-                        if (error) return <Text>Error :(</Text>;
-                        return (
-                            <Faves
-                                addFaveSession={addFaveSession}
-                                removeFaveSession={removeFaveSession}
-                                favesId={favesId}
-                                data={data.allSessions.filter(session =>
-                                    favesId.includes(session.id)
-                                )} />
-                        )
-                    }}
-                </Query>
+            {({ faveIds, addFaveSession, removeFaveSession }) => {
+                console.log("in the faves context");
+                console.log(faveIds, addFaveSession, removeFaveSession);
+                return (
+                    <Query query={ALL_SESSIONS_QUERY}>
+                        {({ loading, error, data }) => {
+                            //console.log(loading, error, data);
+                            console.log("here");
+                            console.log(data.allSessions.filter(session =>
+                                faveIds.includes(session.id)
+                            ))
+                            if (loading) return <Text>Loading...</Text>;
+                            if (error) return <Text>Error :(</Text>;
+                            return (
+                                <Faves
+                                    addFaveSession={addFaveSession}
+                                    removeFaveSession={removeFaveSession}
+                                    faveIds={faveIds}
+                                    data={data.allSessions.filter(session =>
+                                        faveIds.includes(session.id)
+                                    )} />
+                            )
+                        }}
+                    </Query>
+                )
             }}
         </FavesContext.Consumer>
     )

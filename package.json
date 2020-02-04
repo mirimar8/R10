@@ -45,8 +45,7 @@
   },
   "rnpm": {
     "assets": [
-      "./assets/fonts/",
-      "react-native-vector-icons"
+      "./assets/fonts/"
     ]
   }
 }
