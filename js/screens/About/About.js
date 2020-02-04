@@ -37,7 +37,9 @@ const About = ({ title1, title2, description1, description2, data, conduct }) =>
                     )}
                 />
             </View>
-            <Text>{'\u00A9'} RED Academy 2017</Text>
+            <View style={styles.footerContainer}>
+                <Text style={styles.footer}>{'\u00A9'} RED Academy 2017</Text>
+            </View>
         </ScrollView >
 
     );

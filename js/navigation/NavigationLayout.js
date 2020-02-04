@@ -8,39 +8,38 @@ import Schedule from '../screens/Schedule';
 import { Session } from '../screens/Session';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { sharedNavigationOptions } from "./config";
-import { Text } from 'react-native'
 
 const AboutStack = createStackNavigator(
     {
         About: About,
     },
-    // {
-    //     defaultNavigationOptions: ({ navigation }) => ({
-    //         ...sharedNavigationOptions(navigation)
-    //     })
-    // }
+    {
+        defaultNavigationOptions: ({ navigation }) => ({
+            ...sharedNavigationOptions(navigation)
+        })
+    }
 );
 
 const FavesStack = createStackNavigator(
     {
         Faves: Faves,
     },
-    // {
-    //     defaultNavigationOptions: ({ navigation }) => ({
-    //         ...sharedNavigationOptions(navigation)
-    //     })
-    // }
+    {
+        defaultNavigationOptions: ({ navigation }) => ({
+            ...sharedNavigationOptions(navigation)
+        })
+    }
 );
 
 const MapStack = createStackNavigator(
     {
         Map: Map,
     },
-    // {
-    //     defaultNavigationOptions: ({ navigation }) => ({
-    //         ...sharedNavigationOptions(navigation)
-    //     })
-    // }
+    {
+        defaultNavigationOptions: ({ navigation }) => ({
+            ...sharedNavigationOptions(navigation)
+        })
+    }
 );
 
 const ScheduleStack = createStackNavigator(
@@ -48,26 +47,17 @@ const ScheduleStack = createStackNavigator(
         Schedule: Schedule,
         Session: Session,
     },
-    // {
-    //     defaultNavigationOptions: ({ navigation }) => ({
-    //         ...sharedNavigationOptions(navigation)
-    //     })
-    // }
+    {
+        defaultNavigationOptions: ({ navigation }) => ({
+            ...sharedNavigationOptions(navigation)
+        })
+    }
 );
 
 
 export default createBottomTabNavigator(
     {
         Schedule: ScheduleStack,
-        // {
-        //     screen: ScheduleStack,
-        //     navigationOptions: {
-        //         tabBarIcon: ({ tintColor }) => (
-        //             // <Text>⏰</Text>
-        //             <Icon name="ios-calendar" size={25} color="#fff" />
-        //         ),
-        //     },
-        // },
         Map: MapStack,
         Faves: FavesStack,
         About: AboutStack,
@@ -76,7 +66,6 @@ export default createBottomTabNavigator(
         defaultNavigationOptions: ({ navigation }) => ({
             tabBarIcon: ({ focused, horizontal, tintColor }) => {
                 const { routeName } = navigation.state;
-                // let IconComponent = Ionicons;
                 let iconName;
                 if (routeName === 'Schedule') {
                     iconName = 'ios-calendar'
@@ -88,7 +77,6 @@ export default createBottomTabNavigator(
                     iconName = 'ios-map'
                 }
 
-                // You can return any component that you like here!
                 return <Icon name={iconName} size={25} color={tintColor} />;
             },
         }),
