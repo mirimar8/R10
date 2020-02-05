@@ -5,7 +5,12 @@ import {
 import style from '../../config/styles';
 
 const styles = StyleSheet.create({
-
+    speakerContainer: {
+        padding: 50,
+    },
+    outsideContainer: {
+        padding: 50,
+    }
 
 });
 

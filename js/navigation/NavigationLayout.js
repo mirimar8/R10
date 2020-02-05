@@ -1,17 +1,18 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import About from '../screens/About';
-import Faves from '../screens/Faves';
-import Map from '../screens/Map/Map';
-import Schedule from '../screens/Schedule';
-import { Session } from '../screens/Session';
+import AboutScreen from '../screens/About';
+import FavesScreen from '../screens/Faves';
+import MapScreen from '../screens/Map/Map';
+import ScheduleScreen from '../screens/Schedule';
+import SessionScreen from '../screens/Session';
+
 import Icon from 'react-native-vector-icons/Ionicons';
 import { sharedNavigationOptions } from "./config";
 
 const AboutStack = createStackNavigator(
     {
-        About: About,
+        About: AboutScreen,
     },
     {
         defaultNavigationOptions: ({ navigation }) => ({
@@ -22,7 +23,7 @@ const AboutStack = createStackNavigator(
 
 const FavesStack = createStackNavigator(
     {
-        Faves: Faves,
+        Faves: FavesScreen,
     },
     {
         defaultNavigationOptions: ({ navigation }) => ({
@@ -33,7 +34,7 @@ const FavesStack = createStackNavigator(
 
 const MapStack = createStackNavigator(
     {
-        Map: Map,
+        Map: MapScreen,
     },
     {
         defaultNavigationOptions: ({ navigation }) => ({
@@ -44,8 +45,9 @@ const MapStack = createStackNavigator(
 
 const ScheduleStack = createStackNavigator(
     {
-        Schedule: Schedule,
-        Session: Session,
+        Schedule: ScheduleScreen,
+        Session: SessionScreen,
+        // Speaker: SpeakerScreen,
     },
     {
         defaultNavigationOptions: ({ navigation }) => ({

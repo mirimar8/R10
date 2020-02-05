@@ -12,7 +12,7 @@ const SessionList = ({ faveIds, data, navigation }) => {
             <SectionList
                 sections={formatSessionData(data)}
                 renderItem={({ item }) => (
-                    <TouchableHighlight onPress={() => navigation.navigate('Session')}>
+                    <TouchableHighlight onPress={() => navigation.navigate('Session', { item })}>
                         <View style={styles.sessionContainer}>
                             <Text style={styles.titleSession}>{item.title}</Text>
                             <Text style={styles.locationSession}>{item.location}</Text>
