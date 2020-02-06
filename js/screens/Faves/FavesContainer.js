@@ -47,7 +47,8 @@ const FavesContainer = () => {
                                     faveIds={faveIds}
                                     data={data.allSessions.filter(session =>
                                         faveIds.includes(session.id)
-                                    )} />
+                                    )}
+                                />
                             )
                         }}
                     </Query>

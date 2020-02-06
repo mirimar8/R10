@@ -8,11 +8,15 @@ import {
 import styles from './styles';
 import SessionList from '../../components/SessionList/SessionList';
 
-const Schedule = ({ data }) => {
+const Schedule = ({ data, faveIds, addFaveSession, removeFaveSession }) => {
     return (
         <ScrollView>
             <View style={styles.container}>
-                <SessionList data={data} />
+                <SessionList
+                    addFaveSession={addFaveSession}
+                    removeFaveSession={removeFaveSession}
+                    faveIds={faveIds}
+                    data={data} />
             </View>
         </ScrollView >
     );

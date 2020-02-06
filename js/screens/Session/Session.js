@@ -14,8 +14,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 
 const Session = ({ session, navigation, faveIds, addFaveSession, removeFaveSession }) => {
-    console.log("faveIds", faveIds);
-    console.log(addFaveSession);
+    // console.log("faveIds", faveIds);
+    // console.log(addFaveSession);
 
     let buttonTitle;
 

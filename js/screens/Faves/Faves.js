@@ -9,11 +9,15 @@ import styles from './styles';
 import SessionList from '../../components/SessionList/SessionList';
 
 
-const Faves = ({ data, faveIds }) => {
+const Faves = ({ data, faveIds, addFaveSession, removeFaveSession }) => {
     return (
         <ScrollView>
             <View >
-                <SessionList data={data} />
+                <SessionList
+                    addFaveSession={addFaveSession}
+                    removeFaveSession={removeFaveSession}
+                    faveIds={faveIds}
+                    data={data} />
             </View>
         </ScrollView >
     );
