@@ -5,8 +5,8 @@ import { formatSessionData } from '../../helpers';
 import moment from "moment";
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
-
-
+import style from '../../config/styles';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const SessionList = ({ faveIds, data, navigation }) => {
     console.log('sessionlistfaves', faveIds);
@@ -15,13 +15,15 @@ const SessionList = ({ faveIds, data, navigation }) => {
             <SectionList
                 sections={formatSessionData(data)}
                 renderItem={({ item }) => (
-                    <TouchableHighlight onPress={() => navigation.navigate('Session', { item })}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Session', { item })}>
                         <View style={styles.sessionContainer}>
                             <Text style={styles.titleSession}>{item.title}</Text>
-                            <Text style={styles.locationSession}>{item.location}</Text>
-                            {faveIds.indexOf(item.id) !== -1 && <Icon name={'ios-heart'} size={25} color={'red'} />}
+                            <View style={styles.iconContainer}>
+                                <Text style={styles.locationSession}>{item.location}</Text>
+                                {faveIds.indexOf(item.id) !== -1 && <Icon name={'ios-heart'} size={22} color={style.red.color} />}
+                            </View>
                         </View>
-                    </TouchableHighlight>
+                    </TouchableOpacity>
                 )}
 
                 renderSectionHeader={({ section }) =>

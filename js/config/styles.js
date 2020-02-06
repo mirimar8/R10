@@ -9,6 +9,9 @@ const configStyles = StyleSheet.create({
     lightGrey: {
         color: '#e6e6e6',
     },
+    grey: {
+        color: '#e0e0e0',
+    },
     blue: {
         color: '#8797D6',
     },

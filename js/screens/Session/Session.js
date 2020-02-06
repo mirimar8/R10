@@ -11,6 +11,8 @@ import styles from './styles';
 import moment from "moment";
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
+import style from '../../config/styles';
+
 
 
 const Session = ({ session, navigation, faveIds, addFaveSession, removeFaveSession }) => {
@@ -29,7 +31,7 @@ const Session = ({ session, navigation, faveIds, addFaveSession, removeFaveSessi
         <ScrollView>
             <View style={styles.container}>
                 <Text>{session.location}</Text>
-                {(faveIds.indexOf(session.id) !== -1) && <Icon name={'ios-heart'} size={25} color={'red'} />}
+                {(faveIds.indexOf(session.id) !== -1) && <Icon name={'ios-heart'} size={25} color={style.red.color} />}
 
                 <Text>{session.title}</Text>
                 <Text>{moment(session.startTime).format('LT')}</Text>
