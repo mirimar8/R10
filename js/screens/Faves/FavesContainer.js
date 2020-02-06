@@ -28,16 +28,16 @@ const FavesContainer = () => {
     return (
         <FavesContext.Consumer>
             {({ faveIds, addFaveSession, removeFaveSession }) => {
-                console.log("in the faves context");
-                console.log(faveIds, addFaveSession, removeFaveSession);
+                // console.log("in the faves context");
+                // console.log(faveIds, addFaveSession, removeFaveSession);
                 return (
                     <Query query={ALL_SESSIONS_QUERY}>
                         {({ loading, error, data }) => {
                             //console.log(loading, error, data);
-                            console.log("here");
-                            console.log(data.allSessions.filter(session =>
-                                faveIds.includes(session.id)
-                            ))
+                            // console.log("here");
+                            // console.log(data.allSessions.filter(session =>
+                            //     faveIds.includes(session.id)
+                            // ))
                             if (loading) return <Text>Loading...</Text>;
                             if (error) return <Text>Error :(</Text>;
                             return (
