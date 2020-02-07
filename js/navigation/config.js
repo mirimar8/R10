@@ -16,17 +16,22 @@ const GradientHeader = props => (
 );
 
 export const sharedNavigationOptions = navigation => ({
-    headerBackTitle: null,
+    // headerBackTitle: null,
     header: props => <GradientHeader {...props} />,
     headerStyle: {
         backgroundColor: "transparent",
-
-
     },
     headerTitleStyle: {
         color: '#ffffff',
         fontSize: 25,
         fontFamily: 'Montserrat-Regular',
         paddingBottom: 20,
-    }
+    },
+    headerBackTitleStyle: {
+        display: 'none',
+
+    },
+    headerTintColor: '#ffffff',
+
+
 });

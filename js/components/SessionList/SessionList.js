@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, SectionList, TouchableHighlight } from 'react-native';
+import { Text, View, SectionList } from 'react-native';
 import styles from './styles';
 import { formatSessionData } from '../../helpers';
 import moment from "moment";

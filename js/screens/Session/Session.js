@@ -4,15 +4,16 @@ import {
     View,
     Text,
     Image,
-    TouchableHighlight,
-    Button
+    TouchableOpacity,
+    Button,
+    StyleSheet
 } from 'react-native';
 import styles from './styles';
 import moment from "moment";
 import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import style from '../../config/styles';
-
+import LinearGradient from "react-native-linear-gradient";
 
 
 const Session = ({ session, navigation, faveIds, addFaveSession, removeFaveSession }) => {
@@ -22,39 +23,54 @@ const Session = ({ session, navigation, faveIds, addFaveSession, removeFaveSessi
     let buttonTitle;
 
     if (faveIds.indexOf(session.id) === -1) {
-        buttonTitle = "Add Fave";
+        buttonTitle = "Add to Faves";
     } else {
-        buttonTitle = "Remove Fave";
+        buttonTitle = "Remove from Faves";
     }
 
     return (
         <ScrollView>
             <View style={styles.container}>
-                <Text>{session.location}</Text>
-                {(faveIds.indexOf(session.id) !== -1) && <Icon name={'ios-heart'} size={25} color={style.red.color} />}
+                <View style={styles.iconContainer}>
+                    <Text style={styles.locationSession}>{session.location}</Text>
+                    {(faveIds.indexOf(session.id) !== -1) && <Icon name={'ios-heart'} size={25} color={style.red.color} />}
+                </View>
+                <Text style={styles.titleSession}>{session.title}</Text>
+                <Text style={styles.time}>{moment(session.startTime).format('LT')}</Text>
+                <Text style={styles.descSession}>{session.description}</Text>
+                <Text style={styles.presentedByText}>Presented by:</Text>
 
-                <Text>{session.title}</Text>
-                <Text>{moment(session.startTime).format('LT')}</Text>
-                <Text>{session.description}</Text>
-                <Text>Presented by:</Text>
-                <Image
-                    style={{ width: 50, height: 50 }}
-                    source={{ uri: session.speaker.image }}>
-                </Image>
-                <TouchableHighlight onPress={() => navigation.navigate('Speaker', { speaker: session.speaker })}>
-                    <Text>{session.speaker.name}</Text>
-                </TouchableHighlight>
+                <TouchableOpacity onPress={() => navigation.navigate('Speaker', { speaker: session.speaker })}>
+                    <View style={styles.speakerView}>
+                        <Image
+                            style={{ width: 80, height: 80, borderRadius: 50 }}
+                            source={{ uri: session.speaker.image }}>
+                        </Image>
+                        <Text style={styles.speakerName}>{session.speaker.name}</Text>
+                    </View>
+                </TouchableOpacity>
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity
+                        onPress={() => {
+                            if (faveIds.indexOf(session.id) === -1) {
+                                addFaveSession(session.id);
+                            } else {
+                                removeFaveSession(session.id);
+                            }
+                        }}
 
-                <Button
-                    onPress={() => {
-                        if (faveIds.indexOf(session.id) === -1) {
-                            addFaveSession(session.id);
-                        } else {
-                            removeFaveSession(session.id);
-                        }
-                    }}
-                    title={buttonTitle} />
+                    >
+                        <Text style={styles.buttonTitle}>{buttonTitle}</Text>
+                        <LinearGradient
+                            colors={[style.purple.color, style.blue.color]}
+                            start={{ x: 0.0, y: 1.0 }}
+                            end={{ x: 1.0, y: 0.0 }}
+                            style={styles.linearGradient}
 
+                            style={[StyleSheet.absoluteFill, { height: 60, width: '70%', borderRadius: 30, marginHorizontal: 55 }]}
+                        />
+                    </TouchableOpacity>
+                </View>
             </View>
         </ScrollView >
     );
