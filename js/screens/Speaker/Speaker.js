@@ -4,34 +4,58 @@ import {
     View,
     Text,
     Image,
+    TouchableOpacity,
     Button,
-    Linking
+    Linking,
+    StyleSheet,
 
 } from 'react-native';
 import styles from './styles';
 import { withNavigation } from 'react-navigation';
+import Icon from 'react-native-vector-icons/Ionicons';
+import style from '../../config/styles';
+import LinearGradient from "react-native-linear-gradient";
+
+
 
 const Speaker = ({ speaker, navigation }) => {
 
     return (
 
-        <ScrollView>
+        <ScrollView style={styles.container}>
+
             <View style={styles.outsideContainer}>
-                <Button title='X' onPress={() => navigation.goBack()}></Button>
-                <Text>About the Speaker</Text>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Icon name={'ios-close'} size={50} color={'white'} />
+                </TouchableOpacity>
+                <Text style={styles.headerText}>About the Speaker</Text>
             </View>
-            <View style={styles.speakerContainer} >
+            <View style={styles.speakerContainer}  >
 
                 <Image
-                    style={{ width: 50, height: 50 }}
+                    style={{ width: 130, height: 130, borderRadius: 70, marginLeft: 70 }}
                     source={{ uri: speaker.image }}
                 />
-                <Text>{speaker.name}</Text>
-                <Text>{speaker.bio}</Text>
-                <Button
-                    title='Read More On Wikipedia'
-                    onPress={() => { Linking.openURL(speaker.url) }}>
-                </Button>
+                <Text style={styles.speakerName}>{speaker.name}</Text>
+                <Text style={styles.speakerBio}>{speaker.bio}</Text>
+
+                <View style={styles.buttonContainer}>
+
+                    <TouchableOpacity
+                        onPress={() => { Linking.openURL(speaker.url) }}
+                    >
+                        <Text style={styles.buttonTitle}>Read More On Wikipedia</Text>
+
+                        <LinearGradient
+                            colors={[style.purple.color, style.blue.color]}
+                            start={{ x: 0.0, y: 1.0 }}
+                            end={{ x: 1.0, y: 0.0 }}
+                            style={styles.linearGradient}
+
+                            style={[StyleSheet.absoluteFill, { height: 60, width: '100%', borderRadius: 30 }]}
+                        />
+                    </TouchableOpacity>
+                </View>
             </View>
         </ScrollView >
     );
