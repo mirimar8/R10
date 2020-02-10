@@ -47,12 +47,12 @@ const Speaker = ({ speaker, navigation }) => {
                     >
                         <Text style={styles.buttonTitle}>Read More On Wikipedia</Text>
 
-                        {/* <LinearGradient
+                        <LinearGradient
                             colors={[style.purple.color, style.blue.color]}
                             start={{ x: 0.0, y: 1.0 }}
                             end={{ x: 1.0, y: 0.0 }}
                             style={[StyleSheet.absoluteFill, { height: 60, width: '100%', borderRadius: 30 }]}
-                        /> */}
+                        />
                     </TouchableOpacity>
                 </View>
             </View>
