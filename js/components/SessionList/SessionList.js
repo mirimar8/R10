@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, SectionList } from 'react-native';
+import { Text, View, SectionList, Platform } from 'react-native';
 import styles from './styles';
 import { formatSessionData } from '../../helpers';
 import moment from "moment";
@@ -9,7 +9,7 @@ import style from '../../config/styles';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const SessionList = ({ faveIds, data, navigation }) => {
-    console.log('sessionlistfaves', faveIds);
+    // console.log('sessionlistfaves', faveIds);
     return (
         <View >
             <SectionList
@@ -20,7 +20,7 @@ const SessionList = ({ faveIds, data, navigation }) => {
                             <Text style={styles.titleSession}>{item.title}</Text>
                             <View style={styles.iconContainer}>
                                 <Text style={styles.locationSession}>{item.location}</Text>
-                                {faveIds.indexOf(item.id) !== -1 && <Icon name={'ios-heart'} size={22} color={style.red.color} />}
+                                {(faveIds.indexOf(item.id) !== -1) && <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={22} color={style.red.color} />}
                             </View>
                         </View>
                     </TouchableOpacity>

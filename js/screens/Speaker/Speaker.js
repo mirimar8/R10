@@ -8,6 +8,7 @@ import {
     Button,
     Linking,
     StyleSheet,
+    Platform,
 
 } from 'react-native';
 import styles from './styles';
@@ -26,7 +27,7 @@ const Speaker = ({ speaker, navigation }) => {
 
             <View style={styles.outsideContainer}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <Icon name={'ios-close'} size={50} color={'white'} />
+                    <Icon name={Platform.OS === 'ios' ? 'ios-close' : 'md-close'} size={50} color={'white'} />
                 </TouchableOpacity>
                 <Text style={styles.headerText}>About the Speaker</Text>
             </View>
@@ -46,14 +47,12 @@ const Speaker = ({ speaker, navigation }) => {
                     >
                         <Text style={styles.buttonTitle}>Read More On Wikipedia</Text>
 
-                        <LinearGradient
+                        {/* <LinearGradient
                             colors={[style.purple.color, style.blue.color]}
                             start={{ x: 0.0, y: 1.0 }}
                             end={{ x: 1.0, y: 0.0 }}
-                            style={styles.linearGradient}
-
                             style={[StyleSheet.absoluteFill, { height: 60, width: '100%', borderRadius: 30 }]}
-                        />
+                        /> */}
                     </TouchableOpacity>
                 </View>
             </View>

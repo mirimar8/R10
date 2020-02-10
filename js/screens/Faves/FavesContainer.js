@@ -3,6 +3,7 @@ import Faves from './Faves';
 import { Query } from '@apollo/react-components';
 import { gql } from 'apollo-boost';
 import { FavesContext } from '../../context/FavesContext';
+import { Text } from 'react-native';
 
 const ALL_SESSIONS_QUERY = gql`
   {
@@ -33,7 +34,7 @@ const FavesContainer = () => {
                 return (
                     <Query query={ALL_SESSIONS_QUERY}>
                         {({ loading, error, data }) => {
-                            //console.log(loading, error, data);
+                            // console.log(loading, error, data);
                             // console.log("here");
                             // console.log(data.allSessions.filter(session =>
                             //     faveIds.includes(session.id)

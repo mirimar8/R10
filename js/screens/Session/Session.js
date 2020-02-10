@@ -6,7 +6,8 @@ import {
     Image,
     TouchableOpacity,
     Button,
-    StyleSheet
+    StyleSheet,
+    Platform
 } from 'react-native';
 import styles from './styles';
 import moment from "moment";
@@ -21,7 +22,6 @@ const Session = ({ session, navigation, faveIds, addFaveSession, removeFaveSessi
     // console.log(addFaveSession);
 
     let buttonTitle;
-
     if (faveIds.indexOf(session.id) === -1) {
         buttonTitle = "Add to Faves";
     } else {
@@ -33,7 +33,7 @@ const Session = ({ session, navigation, faveIds, addFaveSession, removeFaveSessi
             <View style={styles.container}>
                 <View style={styles.iconContainer}>
                     <Text style={styles.locationSession}>{session.location}</Text>
-                    {(faveIds.indexOf(session.id) !== -1) && <Icon name={'ios-heart'} size={25} color={style.red.color} />}
+                    {(faveIds.indexOf(session.id) !== -1) && <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={25} color={style.red.color} />}
                 </View>
                 <Text style={styles.titleSession}>{session.title}</Text>
                 <Text style={styles.time}>{moment(session.startTime).format('LT')}</Text>
@@ -61,14 +61,14 @@ const Session = ({ session, navigation, faveIds, addFaveSession, removeFaveSessi
 
                     >
                         <Text style={styles.buttonTitle}>{buttonTitle}</Text>
-                        <LinearGradient
+                        {/* <LinearGradient
                             colors={[style.purple.color, style.blue.color]}
                             start={{ x: 0.0, y: 1.0 }}
                             end={{ x: 1.0, y: 0.0 }}
                             style={styles.linearGradient}
 
                             style={[StyleSheet.absoluteFill, { height: 60, width: '70%', borderRadius: 30, marginHorizontal: 55 }]}
-                        />
+                        /> */}
                     </TouchableOpacity>
                 </View>
             </View>

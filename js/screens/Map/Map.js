@@ -4,7 +4,10 @@ import React, { Component } from 'react';
 //     View,
 //     Text,
 // } from 'react-native';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import
+MapView
+    // { PROVIDER_GOOGLE }
+    from 'react-native-maps';
 // import styles from './styles';
 
 class Map extends Component {
