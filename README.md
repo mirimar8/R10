@@ -4,43 +4,30 @@
 A cross-platform (iOS/Android) mobile application using React Native for an upcoming developer conference called R10.
 
 ## Screenshots
-![]()
-![]()
-![]()
+![](assets/images/Screenshot-about-ios.png)
+![](assets/images/Screenshot-schedule-android.png)
+![](assets/images/Screenshot-session-ios.png)
 
 ## Technologies Used
 * React Native
-* Javascript
-* 
+* AsyncStorage
 
-## Server
 
-Commands must be run from the `server` directory:
+## Installation 
 
-### Installation
-
+install all dependencies:
 ```bash
 npm install
 ```
 
-### Run
+### Run for ios
 
 ```bash
-npm start
+npm run ios
 ```
 
-## Client
-
-Commands must be run from the `client` directory:
-
-### Installation
+### Run for android
 
 ```bash
-npm install
-```
-
-### Run
-
-```bash
-npm run start:dev
+npm run android
 ```
