@@ -1,13 +1,9 @@
 import React from 'react';
 import {
     ScrollView,
-    View,
-    Text,
-    FlatList
+    View
 } from 'react-native';
-import styles from './styles';
 import SessionList from '../../components/SessionList/SessionList';
-
 
 const Faves = ({ data, faveIds, addFaveSession, removeFaveSession }) => {
     return (

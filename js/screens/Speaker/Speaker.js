@@ -5,11 +5,9 @@ import {
     Text,
     Image,
     TouchableOpacity,
-    Button,
     Linking,
     StyleSheet,
     Platform,
-
 } from 'react-native';
 import styles from './styles';
 import { withNavigation } from 'react-navigation';
@@ -17,14 +15,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import style from '../../config/styles';
 import LinearGradient from "react-native-linear-gradient";
 
-
-
 const Speaker = ({ speaker, navigation }) => {
-
     return (
-
         <ScrollView style={styles.container}>
-
             <View style={styles.outsideContainer}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Icon name={Platform.OS === 'ios' ? 'ios-close' : 'md-close'} size={50} color={'white'} />

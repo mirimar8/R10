@@ -1,7 +1,4 @@
-import React from 'react';
-import {
-    StyleSheet,
-} from 'react-native';
+import { StyleSheet } from 'react-native';
 import style from '../../config/styles';
 
 const styles = StyleSheet.create({
@@ -52,7 +49,6 @@ const styles = StyleSheet.create({
         fontFamily: style.mainFontRegular.fontFamily,
         color: '#ffffff',
         paddingVertical: 15,
-        // paddingHorizontal: 20,
     },
     buttonContainer: {
         textAlign: 'center',

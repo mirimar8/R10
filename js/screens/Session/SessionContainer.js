@@ -20,7 +20,6 @@ const SessionContainer = ({ navigation }) => {
             }}
 
         </FavesContext.Consumer>
-
     )
 }
 

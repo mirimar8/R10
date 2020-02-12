@@ -18,7 +18,6 @@ const AboutContainer = () => {
     return (
         <Query query={ALL_CONDUCTS_QUERY}>
             {({ loading, error, data }) => {
-                // console.log(loading, error, data);
                 if (loading) return <Text>Loading...</Text>;
                 if (error) return <Text>Error :(</Text>;
 
@@ -29,10 +28,8 @@ const AboutContainer = () => {
                     description2="The R10 conference will take place on Tuesday, June 27, 2017 in Vancouver, BC."
                     data={data}
                 />
-
             }}
         </Query>
-
     )
 }
 

@@ -34,8 +34,6 @@ class FavesProvider extends Component {
         })
     }
 
-
-
     render() {
         return (
             <FavesContext.Provider
@@ -50,7 +48,6 @@ class FavesProvider extends Component {
     }
 
 }
-
 
 export default FavesProvider;
 export { FavesContext };

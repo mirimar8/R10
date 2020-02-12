@@ -3,10 +3,9 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import AboutScreen from '../screens/About';
 import FavesScreen from '../screens/Faves';
-import MapScreen from '../screens/Map/Map';
+import MapScreen from '../screens/Map/Map.ios';
 import ScheduleScreen from '../screens/Schedule';
 import SessionScreen from '../screens/Session';
-
 import Icon from 'react-native-vector-icons/Ionicons';
 import { sharedNavigationOptions } from "./config";
 
@@ -24,6 +23,7 @@ const AboutStack = createStackNavigator(
 const FavesStack = createStackNavigator(
     {
         Faves: FavesScreen,
+        Session: SessionScreen,
     },
     {
         defaultNavigationOptions: ({ navigation }) => ({
@@ -99,7 +99,7 @@ export default createBottomTabNavigator(
             },
             labelPosition: 'below-icon',
         },
-        // initialRouteName: 'About'
+        initialRouteName: 'Schedule',
     },
 
 

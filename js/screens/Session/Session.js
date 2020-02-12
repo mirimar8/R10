@@ -5,7 +5,6 @@ import {
     Text,
     Image,
     TouchableOpacity,
-    Button,
     StyleSheet,
     Platform
 } from 'react-native';
@@ -16,10 +15,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import style from '../../config/styles';
 import LinearGradient from "react-native-linear-gradient";
 
-
 const Session = ({ session, navigation, faveIds, addFaveSession, removeFaveSession }) => {
-    // console.log("faveIds", faveIds);
-    // console.log(addFaveSession);
 
     let buttonTitle;
     if (faveIds.indexOf(session.id) === -1) {
@@ -39,16 +35,18 @@ const Session = ({ session, navigation, faveIds, addFaveSession, removeFaveSessi
                 <Text style={styles.time}>{moment(session.startTime).format('LT')}</Text>
                 <Text style={styles.descSession}>{session.description}</Text>
                 <Text style={styles.presentedByText}>Presented by:</Text>
+                {session.speaker &&
+                    <TouchableOpacity onPress={() => navigation.navigate('Speaker', { speaker: session.speaker })}>
+                        <View style={styles.speakerView}>
+                            <Image
+                                style={{ width: 80, height: 80, borderRadius: 50 }}
+                                source={{ uri: session.speaker.image }}>
+                            </Image>
+                            <Text style={styles.speakerName}>{session.speaker.name}</Text>
+                        </View>
+                    </TouchableOpacity>
+                }
 
-                <TouchableOpacity onPress={() => navigation.navigate('Speaker', { speaker: session.speaker })}>
-                    <View style={styles.speakerView}>
-                        <Image
-                            style={{ width: 80, height: 80, borderRadius: 50 }}
-                            source={{ uri: session.speaker.image }}>
-                        </Image>
-                        <Text style={styles.speakerName}>{session.speaker.name}</Text>
-                    </View>
-                </TouchableOpacity>
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity
                         onPress={() => {

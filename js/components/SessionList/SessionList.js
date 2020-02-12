@@ -9,7 +9,6 @@ import style from '../../config/styles';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const SessionList = ({ faveIds, data, navigation }) => {
-    // console.log('sessionlistfaves', faveIds);
     return (
         <View >
             <SectionList
@@ -25,7 +24,6 @@ const SessionList = ({ faveIds, data, navigation }) => {
                         </View>
                     </TouchableOpacity>
                 )}
-
                 renderSectionHeader={({ section }) =>
                     <Text style={styles.sectionHeader}>{moment(section.title).format('LT')}</Text>}
                 keyExtractor={(item, index) => index}
