@@ -4,9 +4,9 @@
 A cross-platform (iOS/Android) mobile application using React Native for an upcoming developer conference called R10.
 
 ## Screenshots
-![](assets/images/Screenshot-about-ios.jpg)
-![](assets/images/Screenshot-schedule-android.jpg)
-![](assets/images/Screenshot-session-ios.jpg)
+![](assets/images/Screenshot-about-ios.png)
+![](assets/images/Screenshot-schedule-android.png)
+![](assets/images/Screenshot-session-ios.png)
 
 ## Technologies Used
 * React Native
